@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notemaker</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="form"> <form action="/create" method="POST">
+        <input type="text" placeholder="TITLE" name="title">
+        <input type="textarea" placeholder="'ENTER HERE..." name="text">
+        <button type="submit">create file</button>
+    </form></div>
+    <br><br>
+    <div class="files">
+        <% if(files.length >0){ %>
+            <% files.forEach((val)=>{%>
+                <div class="block">
+                <h3><%= val%>  </h3>
+                <a href="files/<%= val%>">read more</a>
+            </div>
+            <%});%>
+        
+        <% } else{ %>
+            <div class="block"></div>
+            <h3>no task at.</h3>
+        </div>
+       <% }%>
+    </div>
+</body>
+</html>
